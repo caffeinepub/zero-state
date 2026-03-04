@@ -245,31 +245,77 @@ function HeroSection() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14 animate-slide-up delay-300">
-          <a href="#pre-register">
+        <div className="flex flex-col items-center gap-5 mb-14 animate-slide-up delay-300">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#pre-register">
+              <Button
+                data-ocid="hero.primary_button"
+                size="lg"
+                className="btn-cyan-primary px-10 py-6 text-sm"
+              >
+                Pre-Register Now
+              </Button>
+            </a>
             <Button
-              data-ocid="hero.primary_button"
+              data-ocid="hero.secondary_button"
               size="lg"
-              className="btn-cyan-primary px-10 py-6 text-sm"
+              variant="outline"
+              className="font-display font-bold tracking-widest uppercase text-sm px-8 py-6 gap-2"
+              style={{
+                background: "transparent",
+                color: "oklch(0.96 0.01 220)",
+                borderColor: "oklch(0.96 0.01 220 / 0.4)",
+                letterSpacing: "0.15em",
+              }}
             >
-              Pre-Register Now
+              <Play className="w-4 h-4" />
+              Watch Trailer
             </Button>
-          </a>
-          <Button
-            data-ocid="hero.secondary_button"
-            size="lg"
-            variant="outline"
-            className="font-display font-bold tracking-widest uppercase text-sm px-8 py-6 gap-2"
+          </div>
+
+          {/* Google Play redirect badge */}
+          <a
+            href="https://play.google.com/store/apps"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-ocid="hero.google_play_button"
+            className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-sm border transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02]"
             style={{
-              background: "transparent",
+              background: "oklch(0.09 0.02 245 / 0.75)",
+              borderColor: "oklch(0.82 0.18 196 / 0.25)",
               color: "oklch(0.96 0.01 220)",
-              borderColor: "oklch(0.96 0.01 220 / 0.4)",
-              letterSpacing: "0.15em",
+              backdropFilter: "blur(8px)",
             }}
           >
-            <Play className="w-4 h-4" />
-            Watch Trailer
-          </Button>
+            {/* Google Play triangle icon */}
+            <div
+              className="flex items-center justify-center w-7 h-7 rounded-sm flex-shrink-0"
+              style={{
+                background: "oklch(0.82 0.18 196 / 0.1)",
+                border: "1px solid oklch(0.82 0.18 196 / 0.25)",
+              }}
+            >
+              <Play
+                className="w-3.5 h-3.5"
+                style={{ color: "oklch(0.82 0.18 196)" }}
+                fill="oklch(0.82 0.18 196)"
+              />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span
+                className="font-mono text-[9px] tracking-[0.18em] uppercase mb-0.5"
+                style={{ color: "oklch(0.55 0.05 240)" }}
+              >
+                Available on
+              </span>
+              <span
+                className="font-display font-bold text-xs tracking-wide"
+                style={{ color: "oklch(0.88 0.06 220)" }}
+              >
+                Google Play
+              </span>
+            </div>
+          </a>
         </div>
 
         {/* Stat badges */}

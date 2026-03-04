@@ -1,3 +1,4 @@
+import { Play } from "lucide-react";
 import { RevealSection } from "../components/RevealSection";
 
 const lines = [
@@ -93,24 +94,85 @@ export default function AppStoreBlock() {
             </div>
 
             <div
-              className="mt-8 pt-6 border-t flex items-center gap-3"
+              className="mt-8 pt-6 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
               style={{ borderColor: "oklch(0.82 0.18 196 / 0.15)" }}
             >
-              <div
-                className="w-1 h-8 rounded-full"
-                style={{ background: "oklch(0.82 0.18 196)" }}
-              />
-              <div>
-                <p
-                  className="font-display font-extrabold text-sm tracking-widest uppercase"
-                  style={{ color: "oklch(0.82 0.18 196)" }}
-                >
-                  PROJECT: ZERO STATE
-                </p>
-                <p className="font-mono text-xs text-muted-foreground">
-                  Official App Store Description
-                </p>
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-1 h-8 rounded-full"
+                  style={{ background: "oklch(0.82 0.18 196)" }}
+                />
+                <div>
+                  <p
+                    className="font-display font-extrabold text-sm tracking-widest uppercase"
+                    style={{ color: "oklch(0.82 0.18 196)" }}
+                  >
+                    PROJECT: ZERO STATE
+                  </p>
+                  <p className="font-mono text-xs text-muted-foreground">
+                    Official App Store Description
+                  </p>
+                </div>
               </div>
+
+              {/* Google Play Store button */}
+              <a
+                href="https://play.google.com/store/apps"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="appstore.google_play_button"
+                className="group inline-flex items-center gap-3 px-5 py-3 rounded-sm border transition-all duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: "oklch(0.12 0.025 245 / 0.9)",
+                  borderColor: "oklch(0.82 0.18 196 / 0.3)",
+                  color: "oklch(0.96 0.01 220)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background =
+                    "oklch(0.16 0.03 245 / 0.95)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                    "oklch(0.82 0.18 196 / 0.7)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                    "0 0 18px oklch(0.82 0.18 196 / 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background =
+                    "oklch(0.12 0.025 245 / 0.9)";
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                    "oklch(0.82 0.18 196 / 0.3)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                    "none";
+                }}
+              >
+                {/* Google Play triangle icon */}
+                <div
+                  className="flex items-center justify-center w-8 h-8 rounded-sm flex-shrink-0"
+                  style={{
+                    background: "oklch(0.82 0.18 196 / 0.12)",
+                    border: "1px solid oklch(0.82 0.18 196 / 0.3)",
+                  }}
+                >
+                  <Play
+                    className="w-4 h-4"
+                    style={{ color: "oklch(0.82 0.18 196)" }}
+                    fill="oklch(0.82 0.18 196)"
+                  />
+                </div>
+                <div className="flex flex-col leading-none">
+                  <span
+                    className="font-mono text-[10px] tracking-[0.15em] uppercase mb-0.5"
+                    style={{ color: "oklch(0.65 0.06 240)" }}
+                  >
+                    GET IT ON
+                  </span>
+                  <span
+                    className="font-display font-bold text-sm tracking-wide"
+                    style={{ color: "oklch(0.96 0.01 220)" }}
+                  >
+                    Google Play
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </RevealSection>
